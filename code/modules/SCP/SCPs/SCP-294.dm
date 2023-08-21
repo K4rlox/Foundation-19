@@ -25,7 +25,6 @@
 	/datum/reagent/advanced_mutation_toxin,
 	/datum/reagent/grauel,
 	/datum/reagent/laich,
-	/datum/reagent/gottheit,
 	)
 	/// List of name shortcuts for allowed chems: Name = Datum
 	var/list/shortcut_chems = list(

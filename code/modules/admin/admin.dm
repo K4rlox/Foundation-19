@@ -907,7 +907,7 @@ var/global/floorIsLava = 0
 	if(matches.len==1)
 		chosen = matches[1]
 	else
-		chosen = tgui_input_list(usr, "Select an atom type", "Spawn Atom", matches, matches[1])
+		chosen = input("Select an atom type", "Spawn Atom", matches[1]) as null|anything in matches
 		if(!chosen)
 			return
 
@@ -1283,20 +1283,20 @@ var/global/floorIsLava = 0
 		return
 
 	// Origin
-	var/list/option_list = GLOB.admin_departments.Copy() + GLOB.alldepartments.Copy() + "(Custom)"
-	var/replyorigin = tgui_input_list(owner, "Please specify who the fax is coming from. Choose '(Custom)' to enter a custom department or '(Cancel) to cancel.", "Fax Origin", option_list)
+	var/list/option_list = GLOB.admin_departments.Copy() + GLOB.alldepartments.Copy() + "(Custom)" + "(Cancel)"
+	var/replyorigin = input(owner, "Please specify who the fax is coming from. Choose '(Custom)' to enter a custom department or '(Cancel) to cancel.", "Fax Origin") as null|anything in option_list
 	if (!replyorigin || replyorigin == "(Cancel)")
 		return
 	if (replyorigin == "(Custom)")
-		replyorigin = tgui_input_text(owner, "Please specify who the fax is coming from.", "Fax Machine Department Tag")
+		replyorigin = input(owner, "Please specify who the fax is coming from.", "Fax Machine Department Tag") as text|null
 		if (!replyorigin)
 			return
-	if (replyorigin == "Unknown" || replyorigin == "(Custom)")
+	if (replyorigin == "Unknown" || replyorigin == "(Custom)" || replyorigin == "(Cancel)")
 		to_chat(owner, SPAN_WARNING("Invalid origin selected."))
 		return
 
 	// Destination
-	var/department = tgui_input_list(owner, "Choose a destination fax", "Fax Target", GLOB.alldepartments)
+	var/department = input("Choose a destination fax", "Fax Target") as null|anything in GLOB.alldepartments
 
 	// Generate the fax
 	var/obj/item/paper/admin/P = new /obj/item/paper/admin( null ) //hopefully the null loc won't cause trouble for us
@@ -1325,14 +1325,13 @@ var/global/floorIsLava = 0
 /datum/admins/var/obj/item/paper/admin/faxreply // var to hold fax replies in
 
 /datum/admins/proc/faxCallback(obj/item/paper/admin/P)
-	var/customname = tgui_input_text(src.owner, "Pick a title for the report", "Title")
+	var/customname = input(src.owner, "Pick a title for the report", "Title") as text|null
 
 	P.SetName("[customname]")
 
 	var/shouldStamp = TRUE
 	if(!P.sender) // admin initiated
 		var/need_stamp = alert(src.owner, "Would you like the fax stamped?", "Stamp", "Yes", "No")
-		tgui_alert(src.owner, "Would you like the fax stamped?", "Stamp", list("Yes", "No"))
 		if(need_stamp != "Yes")
 			shouldStamp = FALSE
 

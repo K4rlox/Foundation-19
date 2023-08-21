@@ -205,8 +205,7 @@ export class Changelog extends Component {
         <h3>Foundation 19 Development Team</h3>
         <p>
           <b>Coders: </b>
-          Lestatanderson, Tsurupeta, HarryOB, ivanmixo, Autisme, DTraitor,
-          TheDarkElites, cheesePizza2, EgorDinamit
+          Lestatanderson, Tsurupeta, HarryOB, TheDarkElites, cheesePizza2, Seven
         </p>
         <p>
           <b>Spriters: </b>
