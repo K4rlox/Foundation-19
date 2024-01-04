@@ -653,7 +653,7 @@
 "acb" = (
 /obj/machinery/door/airlock/glass/research{
 	name = "Xenobiology Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -865,7 +865,7 @@
 	},
 /obj/machinery/door/airlock/glass/research{
 	name = "Xenobiology Laboratory";
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -2466,10 +2466,6 @@
 "ahX" = (
 /obj/effect/paint_stripe/gray,
 /turf/simulated/wall/prepainted,
-/area/site53/ulcz/scp078)
-"aia" = (
-/obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/tiled/monotile/white,
 /area/site53/ulcz/scp078)
 "aib" = (
 /obj/structure/closet/l3closet/scientist/multi,
@@ -12094,7 +12090,7 @@
 /obj/machinery/door/window/brigdoor/northleft,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/window/brigdoor/southright{
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -12293,7 +12289,7 @@
 /obj/machinery/door/window/brigdoor/westleft,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/door/window/brigdoor/eastleft{
-	req_access = list("ACCESS_SCIENCE_LEVEL3")
+	req_access = list("ACCESS_SCIENCE_LEVEL2")
 	},
 /turf/simulated/floor/tiled,
 /area/site53/reswing/xenobiology)
@@ -44492,7 +44488,7 @@ aVS
 azA
 azA
 ahX
-aia
+aie
 ahg
 aie
 aie
